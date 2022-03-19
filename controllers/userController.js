@@ -20,12 +20,8 @@ const userController = {
 
 removingUser({params},res){
     User.findOneAndDelete({idid: params.id})
-    .then(UserDataDB => {
-        if(!UserDataDB){
-            res.status(404).json({json : " No user Found"});
-            return;
-        }
-    })
+    .then(UserDataDB => res.json(UserDataDB))
+  .catch(err => res.json(err));
 },
 
 getUserByID({ params},res){
