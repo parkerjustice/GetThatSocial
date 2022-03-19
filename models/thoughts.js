@@ -19,8 +19,32 @@ username: {
 {toJSON:{
     getters:true}})
 
-const thoughtSchema = new Schema ()
+    //a bit messy but shows the reaction schema
 
+const thoughtSchema = new Schema ({
+    thoughtText: {
+        type: String,
+        required: true,
+        minlength: 1,
+        maxlength: 280
+    },
+username: {
+    type: String,
+    required:true
+}, 
+reactions: [reactionsSchema],
 
+toJSON: {
+    virtuals: true,
+    getters: true
+},
 
+})
+
+thoughtSchema.virtuals("reactionsCount").get(function(){
+    return this.reactions.maxlength;
+})
+
+const Thought = module("thoughts", thoughtSchema);
+module.exports = thoughts;
 
