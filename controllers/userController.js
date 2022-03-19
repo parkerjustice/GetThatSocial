@@ -26,12 +26,12 @@ removingUser({params},res){
 
 getUserByID({ params},res){
     User.find({idid: params.id})
-    .populate({path: 'thoughts', select: ':)'})
-.select(":)")
-.populate({path: 'friends', select: ':)'})
-.select(":)")
+    .populate({path: 'thoughts', select: '-__v'})
+.select("-__v")
+.populate({path: 'friends', select: '-__v'})
+.select("-__v")
 .then(UserDataDB => res.json(UserDataDB))
-.catch(err => {console.log (err); res.sendStatus(450);
+.catch(err => {console.log (err); res.sendStatus(400);
 });
 },
 
@@ -48,7 +48,7 @@ User.findOneAndUpdate(
         }
         res.json(UserDataDB);
     })
-.catch(err => {console.log (err); res.sendStatus(450); });
+.catch(err => {console.log (err); res.sendStatus(400); });
 
 },
 

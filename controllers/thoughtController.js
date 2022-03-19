@@ -3,26 +3,27 @@ const { User, Thought } = require("../models")
 const thoughtController = { 
     getAllThoughts(req, res)
 { Thought.find({})
-.populate({path: 'reaction', select: ':)'})
-.select(":)")
+.populate({path: 'reaction', select: '-__v'})
+.select("-__v")
 .then(UserDataDB => res.json(UserDataDB))
-.catch(err => {console.log (err); res.sendStatus(450);
+.catch(err => {console.log (err); res.sendStatus(400);
 });
 },
 
 //removing a thought?
 removingThought({ params }, res) {
     Thought.findOneAndDelete ({idid: params.thoughtID})
+    //same as the rest
     .then(UserDataDB => res.json(UserDataDB))
 .catch(err => res.json(err));
 },
 //same as before just minor id changes 
-getThoughtByID({ params},res){
+getThoughtByID({params},res){
     Thought.find({idid: params.thoughtID})
-    .populate({path: 'reaction', select: ':)'})
-.select(":)")
+    .populate({path: 'reaction', select: '-__v'})
+.select("-__v")
 .then(UserDataDB => res.json(UserDataDB))
-.catch(err => {console.log (err); res.sendStatus(450);
+.catch(err => {console.log (err); res.sendStatus(400);
 });
 },
 
@@ -38,7 +39,7 @@ addingReaction({params, body}, res){
         )
     })
     .then(UserDataDB => res.json(UserDataDB))
-.catch(err => {console.log (err); res.sendStatus(450); });
+.catch(err => {console.log (err); res.sendStatus(400); });
 
 },
 
