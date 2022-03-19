@@ -17,12 +17,10 @@ username: {
 
 },
 {toJSON:{
-    getters:true,
-}},
+    getters:true}})
+
+const thoughtSchema = new Schema ()
 
 
 
 
-
-
-)
