@@ -1,0 +1,17 @@
+{
+"repository": {
+    "type": "git",
+    "url": "https://github.com/parkerjustice/GetThatSocial"
+  },
+  "keywords": [],
+  "author": "Parker Justice",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/parkerjustice/GetThatSocial"
+  },
+  "homepage": "https://github.com/parkerjustice/GetThatSocial#readme",
+  "dependencies": {
+    "express": "^4.17.2",
+    "mongoose": "^6.2.1"
+  }
+}
