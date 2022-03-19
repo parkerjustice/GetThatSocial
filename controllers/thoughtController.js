@@ -40,8 +40,9 @@ addingReaction({params, body}, res){
     .then(UserDataDB => res.json(UserDataDB))
 .catch(err => {console.log (err); res.sendStatus(450); });
 
-}
+},
 
+module.exports = thoughtController;
 
 
 
