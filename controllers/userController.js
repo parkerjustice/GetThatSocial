@@ -18,7 +18,15 @@ const userController = {
             res.status(450).json(err); });
     },
 
-
+removingUser({params},res){
+    User.findOneAndDelete({idid: params.id})
+    .then(UserDataDB => {
+        if(!UserDataDB){
+            res.status(404).json({json : " No user Found"});
+            return;
+        }
+    })
+},
 
 getUserByID({ params},res){
     User.find({idid: params.id})
