@@ -3,7 +3,7 @@ const usersSchema= new Schema ({
         username: {
             type: String,
             unique: true,
-            required:{ true: "Provide your username here"},
+            required: { true: "Provide your username here"},
             trim: true,
         },
 
@@ -11,7 +11,7 @@ const usersSchema= new Schema ({
             type: {string},
             unique: true,
             require: {true: "provide email"}, 
-            match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/,
+            match: [/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/]
 }})
 
         thoughts: [
@@ -26,4 +26,5 @@ const usersSchema= new Schema ({
                 ref: "User"
             }
         ]
+    
 
