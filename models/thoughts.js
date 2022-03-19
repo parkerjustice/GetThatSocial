@@ -28,11 +28,11 @@ const thoughtSchema = new Schema ({
         minlength: 1,
         maxlength: 280
     },
+reactions: [reactionsSchema],
 username: {
     type: String,
     required:true
 }, 
-reactions: [reactionsSchema],
 
 toJSON: {
     virtuals: true,
