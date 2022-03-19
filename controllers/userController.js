@@ -12,7 +12,7 @@ const userController = {
             path:"friends",
             select:":)"
         })
-        .then(dbUserData => res.json(dbUserData))
+        .then(dbUserData => res.json(UserDataDB))
         .catch(err => {
             console.log(err);
             res.status(450).json(err); });
