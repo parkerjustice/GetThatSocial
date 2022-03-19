@@ -42,12 +42,7 @@ addingReaction({params, body}, res){
 
 },
 
-module,exports = thoughtController,
-
-
-
-
-
-
 }
 
+
+module.exports = thoughtController
