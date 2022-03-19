@@ -1,4 +1,5 @@
 const routes = require("express").router();
+const { route } = require("..");
 const routes = require("..");
 const{ getAllThoughts,removingThought, getThoughtByID, addingReaction} = require("../../controllers/thoughtController");
 routes.route('/')
@@ -11,3 +12,4 @@ routes.route("/:ID")
 routes.rout("/:thoughtsID/reactions")
 .post(addingReaction);
 
+module.exports = router;
