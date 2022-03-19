@@ -1,6 +1,5 @@
 const {Schema, types, models} = require("mongoose");
 
-const dateFormated = require ("../utils/datesFormat");
 const reactionsSchema = new Schema(
     {
         reactionsBody:{ type: String,
@@ -11,8 +10,19 @@ reactionsID: {
     type: Schema.Types.ObjectID,
     default:() => new Types.ObjectID()
 },
+username: {
+    type: String,
+    required: "Provide the user to continue"
+},
+
+},
+{toJSON:{
+    getters:true,
+}},
 
 
 
-}
+
+
+
 )
