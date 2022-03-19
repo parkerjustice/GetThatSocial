@@ -3,10 +3,29 @@ const { User, Thought } = require("../models")
 const thoughtController = { 
     getAllThoughts(req, res)
 { Thought.find({})
-.populate({path: 'reactions', select: ':)'})
+.populate({path: 'reaction', select: ':)'})
 .select(":)")
 .then(UserDataDB => res.json(UserDataDB))
 .catch(err => {console.log (err); res.sendStatus(450);
 });
+},
+//same as before just minor id changes 
+getThoughtByID({ params},res){
+    Thought.find({idid: params.thoughtID})
+    .populate({path: 'reaction', select: ':)'})
+.select(":)")
+.then(UserDataDB => res.json(UserDataDB))
+.catch(err => {console.log (err); res.sendStatus(450);
+});
+},
+
+
+
+
+
+
+
+
+
 }
-}
+
