@@ -4,3 +4,10 @@ const{ getAllThoughts,removingThought, getThoughtByID, addingReaction} = require
 routes.route('/')
 .get(getAllThoughts);
 
+routes.route("/:ID")
+.get(getThoughtByID)
+.remove(removingThought);
+
+routes.rout("/:thoughtsID/reactions")
+.post(addingReaction);
+
