@@ -53,3 +53,4 @@ User.findOneAndUpdate(
 },
 
 }
+module.exports = userController
