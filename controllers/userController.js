@@ -31,6 +31,21 @@ getUserByID({ params},res){
 });
 },
 
+addingFriends({params, body}, res) {
+User.findOneAndUpdate(
+            {idid: params.UserID},
+            {$add: {friends: params.friendID} },
+            {new: true}
+        )
+    .then(UserDataDB => {
+        if(UserDataDB){
+            res.status(404).json({json : "User not Found"});
+            return;
+        }
+        res.json(UserDataDB);
+    })
+.catch(err => {console.log (err); res.sendStatus(450); });
 
+},
 
 }
